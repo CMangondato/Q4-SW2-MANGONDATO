@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Seatwork 2</title>
+	<style>
+		body{
+			background-color: #9AC8CD;
+	    	}
+
+	    .png{
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            }
+
+        .miffy{
+        	display: flex;
+        	border-style: groove;
+        	width: 450px;
+        	padding: 10px;
+              }
+
+        .buttons{
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            text-align: center; 
+        		}
+
+        .buttons button {
+            margin: 3px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 3px solid slategray;
+            border-radius: 5px;
+            background-color: dimgrey;
+            color: white;
+                        }
+ 
+        .buttons button:hover {
+            background-color: #555;
+   						      }
+
+        .buttons button:active {
+            background-color: #333;
+       						   }
+ 
+        .buttons {
+            max-width: 500px;
+        		 }  
+	</style>
+</head>
+
+<body>
+	<div class="png">
+      <div class="left-side">
+        <img src="C:\Users\DELL\Downloads\png-clipart-miffy-blue-dress-cartoons-miffy-removebg-preview.png" alt="Calculator">
+    </div>
+
+    <div class="miffy">
+        <div class="box">
+           <center><h3>Hello! I'm Miffy. Come and give my calculator a try! ⭐</h3></center>
+                <p>Enter a value for x:</p>
+                  <input type="number" id="inputX">
+                <p>Enter a value for y:</p>
+                  <input type="number" id="inputY">
+    </div>
+
+    <div class="buttons">
+        <div class="buttons-row">
+            <button onclick="calculate('product')">product of x and y</button>
+            <button onclick="calculate('raised')">x raised to y</button>
+            <button onclick="calculate('remainder')">get the remainder</button>
+            <button onclick="calculate('equal')">check if x is equal to y</button>
+        </div>
+    </div>
+        </div>
+    </div>
+    <script>
+        function calculate(operation) {
+            var x = parseFloat(document.getElementById('inputX').value);
+            var y = parseFloat(document.getElementById('inputY').value);
+            var result;
+            switch (operation) {
+                case 'product':
+                    result = x * y;
+                    break;
+                case 'raised':
+                    result = Math.pow(x, y);
+                    break;
+                case 'remainder':
+                    result = x % y;
+                    break;
+                case 'equal':
+                    result = x === y;
+                    break;
+                default:
+                    result = 'Invalid operation';
+                               }
+            alert('Result: ' + result);
+                               }
+    </script>
+
+</body>
+</html>
